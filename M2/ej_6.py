@@ -8,7 +8,7 @@ suma = 0
 mayor = 0
 menor = 0
 while i < N :
-    num = float(input('numero: '))
+    num = float(input('numero {} :'.format(i+1)))
     if i == 0 :
         mayor = num
         menor = num
@@ -16,7 +16,7 @@ while i < N :
         if num > mayor :
             mayor = num
         if num < menor :
-            mnenor = num
+            menor = num
     suma = suma + num
     i = i + 1
 promedio = suma / N

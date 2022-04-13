@@ -2,7 +2,6 @@
 Ejericio 1.
 Determinar si un string corresponde a un flotante válido
 """
-
 real_str = input('Ingrese un real válido: ')
 
 len_str = len(real_str)
