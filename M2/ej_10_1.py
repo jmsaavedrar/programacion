@@ -20,7 +20,8 @@ for i in range(n_datos) :
     histograma[datos[i]] = histograma[datos[i]] + 1
     
 for i in range(len(histograma)):
-    print('{} -> {}'.format(i, '*'*histograma[i]))
+   # print('{} -> {}'.format(i, '*'*histograma[i]))
+    print('{} -> {} ocurrencias'.format(i, histograma[i]))
     
 #print(datos)
 #print(histograma)
