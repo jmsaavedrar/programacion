@@ -9,7 +9,7 @@ N = len(entrada)
 if i< N and  entrada[i].isalpha() :
     estado = 1
     i = i + 1
-    
+     
 if i< N and  estado == 1 and entrada[i].isdigit() :
     estado = 2
     i = i + 1

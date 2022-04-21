@@ -8,7 +8,7 @@ while i < n_nombres :
     
     nombre = input('nombre {}: '.format(i+1))
     while nombre in nombres :
-        print('error: {} ya existe, ingrese nuevamente')
+        print('error: {} ya existe, ingrese nuevamente'.format(nombre))
         nombre = input('nombre {}: '.format(i+1))
     nombres.append(nombre)
     i = i + 1
