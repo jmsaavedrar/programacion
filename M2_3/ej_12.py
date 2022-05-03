@@ -1,8 +1,8 @@
 """
-bin2dec
+dec2bin
 """
 
-dec = int(input('Ingrese binario: '))
+dec = int(input('Ingrese nro: '))
 str_bin = ''
 if dec == 0 :
     str_bin = '0'
