@@ -11,7 +11,7 @@ def filtrar_por_edad(nombres, edades, edad_corte):
     
 nombres = ['Juan', 'Ana', 'Pedro', 'Camila']
 edades = [18, 17, 20, 21]
-nueva_lista = filtrar_por_edad(nombres, edades, 25)
+nueva_lista = filtrar_por_edad(nombres, edades, 20)
 print(nueva_lista)
 
 

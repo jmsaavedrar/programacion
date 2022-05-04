@@ -38,13 +38,17 @@ def crear_listas_por_comunas(usuarios, comunas):
 #    comunas_unicas = []
 #    usuarios_por_comuna = []
 
-usuarios = ['Juan', 'Ana', 'Pedro', 'Camila', 'Julio']
-comunas = ['A', 'B', 'A', 'C', 'B']
+personas = ['Juan', 'Ana', 'Pedro', 'Camila', 'Julio', 'María']
+comunas = ['Las Condes', 'Ñuñoa', 'Providencia', 'Las Condes', 'Ñuñoa', 'La Florida']
 
-ordenar_por_comunas(usuarios, comunas)
-print(usuarios)
-print(comunas)
-comunas_unicas, lista = crear_listas_por_comunas(usuarios, comunas)
-print(comunas_unicas)
-print(lista)
+
+print('--------------input--------------------')
+print('personas: {}'.format(personas))
+print('comunas: {}'.format(comunas))
+ordenar_por_comunas(personas, comunas)
+comunas_unicas, lista_agregada = crear_listas_por_comunas(personas, comunas)
+print('--------------------output--------------')
+for i, comuna in enumerate(comunas_unicas):
+    print('Comuna: {}'.format(comuna))
+    print(lista_agregada[i])
 

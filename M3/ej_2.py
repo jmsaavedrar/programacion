@@ -22,6 +22,8 @@ def bin2dec(str_bin):
 
 A = ['10001', '00011', '1111', '10000001', '123', '01010101']
 
+print(A)
+
 for item in A :
     if es_binario(item) :
         print('{} -> {}'.format(item, bin2dec(item)))
