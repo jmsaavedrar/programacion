@@ -1,8 +1,8 @@
 """
 Ordenar por comunas
 """
-def ordenar_por_comunas(usuarios, comunas):
-    n = len(usuarios)
+def ordenar_por_comunas(nombres, comunas):
+    n = len(nombres)
     for i in range(n - 1):
         menor = comunas[i]
         pos = i
@@ -11,11 +11,15 @@ def ordenar_por_comunas(usuarios, comunas):
                 menor = comunas[j]
                 pos = j
         
-        menor_usuario = usuarios[pos]
-        usuarios[pos] = usuarios[i]
-        usuarios[i] = menor_usuario                
+        #mueve las comunas
         comunas[pos] = comunas[i]
         comunas[i] = menor
+        
+        #mueve los nombres
+        aux = nombres[pos]
+        nombres[pos] = nombres[i]
+        nombres[i] = aux
+        
 
 def crear_listas_por_comunas(usuarios, comunas):
     comunas_unicas = []
@@ -34,9 +38,7 @@ def crear_listas_por_comunas(usuarios, comunas):
         j = j + 1
     return comunas_unicas, lista_por_comunas    
     
-#def crear_lista_por_comunas(usuario, comunas):
-#    comunas_unicas = []
-#    usuarios_por_comuna = []
+
 
 personas = ['Juan', 'Ana', 'Pedro', 'Camila', 'Julio', 'María']
 comunas = ['Las Condes', 'Ñuñoa', 'Providencia', 'Las Condes', 'Ñuñoa', 'La Florida']
@@ -46,9 +48,9 @@ print('--------------input--------------------')
 print('personas: {}'.format(personas))
 print('comunas: {}'.format(comunas))
 ordenar_por_comunas(personas, comunas)
-comunas_unicas, lista_agregada = crear_listas_por_comunas(personas, comunas)
+comunas_unicas, grupos = crear_listas_por_comunas(personas, comunas)
 print('--------------------output--------------')
 for i, comuna in enumerate(comunas_unicas):
     print('Comuna: {}'.format(comuna))
-    print(lista_agregada[i])
+    print(grupos[i])
 
