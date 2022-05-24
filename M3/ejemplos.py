@@ -4,8 +4,18 @@ Ejemplos sobre listas
 
 import random
 
-A = [6, 3, 2, 5, 9, 7]
-for a in A :
-    print(a)
+def f(A):
+    B = [1,2,3]
+    A.clear()
+    for item in B:
+        A.append(item)
+         
+
+if __name__ == '__main__' :
+    A = [6, 3, 2, 5, 9, 7]
+    print(A)
+    f(A)
+    print(A)
     
+ 
  
