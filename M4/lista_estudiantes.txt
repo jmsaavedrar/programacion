@@ -1,0 +1,3 @@
+Juan,20,Computación
+Ana,21,Industrial
+Pedro,19,Computación
