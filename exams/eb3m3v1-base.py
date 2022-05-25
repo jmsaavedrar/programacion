@@ -22,14 +22,15 @@ def crear_biblioteca_vacia():
         }
     return biblioteca
 
-def find_genero(lista, val):
+def buscar_genero(lista, val):
     pos = -1
     i = 0
     while pos == -1 and i < len(lista) :
         if lista[i] == val :
             pos = i
         i = i + 1
-    return i    
+    return i
+    
 def crear_artista(nombre, genero, biblioteca):
     ans = False
     if not nombre in biblioteca['artistas'] :
