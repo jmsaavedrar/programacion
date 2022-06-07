@@ -48,7 +48,8 @@ def grafico1(datos):
     dic = contar_instancias(datos, 'year')
     years =sorted(dic)                    
     conteo = [dic[year] for year in years]    
-    plt.plot(years, conteo)    
+    #plt.plot(years, conteo)
+    plt.scatter(years, conteo)    
     
 
 if __name__ == '__main__' :
