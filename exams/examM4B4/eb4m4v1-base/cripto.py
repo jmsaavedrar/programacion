@@ -1,8 +1,9 @@
 """
 """
 import matplotlib.pyplot as plt
-def load_file(filename):    
-    lines = open(filename).readlines()[1:]
+def load_file(filename):
+    f = open(filename)    
+    lines = f.readlines()[1:]
     data = []
     for line in lines :
         ldata = line.strip().split(',')
@@ -20,6 +21,7 @@ def load_file(filename):
             'mktcap' : float(ldata[7])            
             }
             )
+    f.close()
     return data
 
 def reportar(data):
@@ -109,7 +111,8 @@ def obtener_nro_alzas_bajas(data, fechas):
             if dict[fecha] < 0 :
                 bajas += 1
     return (alzas, bajas)
-data = load_file('ETH.csv')
+data_eth = load_file('ETH.csv')
+data_btc = load_file('BTC.csv')
 #reportar(data)
 #fechas = obtener_fechas('2013-04-29', 7)
 # vals = obtener_high_values_fechas(data, fechas)
@@ -118,7 +121,12 @@ data = load_file('ETH.csv')
 # print(vals)
 
 fechas = obtener_fechas('2019-01-12', 30)
-alzas, bajas = obtener_nro_alzas_bajas(data, fechas)
+alzas, bajas = obtener_nro_alzas_bajas(data_eth, fechas)
+alzas_btc, bajas_btc = obtener_nro_alzas_bajas(data_btc, fechas)
 print('{} {}'.format(alzas, bajas))
-plt.bar(['alzas', 'bajas'], [alzas, bajas])
+fig, hs = plt.subplots(1,2)
+hs[0].bar(['alzas', 'bajas'], [alzas, bajas], color = 'blue')
+hs[0].set_xlabel('ETH')
+hs[1].bar(['alzas', 'bajas'], [alzas_btc, bajas_btc], color = (1,0,0))
+hs[1].set_xlabel('BTC')
 plt.show()
