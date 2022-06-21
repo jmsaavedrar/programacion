@@ -40,7 +40,7 @@ def productos_por_vendedor(data):
 data = read_catalog()
 conteo = productos_por_vendedor(data) 
 print(conteo)   
-
+#ordenando diccionario
 # keys = []
 # values = []
 # for key in conteo :
@@ -52,9 +52,9 @@ values = list(conteo.values())
 keys = keys[0:10]
 values = values[0:10] 
 plt.bar(keys, values)
+#rota los textos en el eje x
 plt.xticks(rotation = 45) 
 plt.show()
-    
 # precios = []
 # for item in data :
 #     precios.append(item['precio_max'])

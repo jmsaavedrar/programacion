@@ -52,6 +52,7 @@ values = list(conteo.values())
 keys = keys[0:10]
 values = values[0:10] 
 plt.bar(keys, values)
+#rota los textos en el eje x
 plt.xticks(rotation = 45) 
 plt.show()
     
