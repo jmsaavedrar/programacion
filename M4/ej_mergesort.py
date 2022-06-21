@@ -1,14 +1,22 @@
 """
+MergeSort
 """
 
 def mergesort(lista, i, j):
+    """
+    mergesort recursivo
+    """
     if i<j :
         k = (i + j) // 2
         mergesort(lista, i, k)
         mergesort(lista, k+1, j)
         merge(lista, i, k, j)
 
+
 def merge(lista, i, k, j):
+    """
+    mezcla dos listas lista[i..k] lista[k+1...j]
+    """
     lista_1 = []
     p1 = i
     p2 = k+1
