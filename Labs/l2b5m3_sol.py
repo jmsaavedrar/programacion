@@ -24,6 +24,7 @@ def read_catalog() :
 def ordenar(dict):
     dic_ordenado = sorted(dict.items(), key = lambda x : x[1], reverse = True)
     return dic_ordenado
+
 #Mostrar los 10 vendedores con más productos
 def obtener_vendedores_productos(data):
     # vendedor : cantidad
@@ -31,7 +32,7 @@ def obtener_vendedores_productos(data):
     for item in data :
         vendedor = item['vendedor']
         if vendedor in dic_conteo :
-            dic_conteo[vendedor] += 1
+            dic_conteo[vendedor] = dic_conteo[vendedor] + 1
         else :
             dic_conteo[vendedor] = 1
     return dic_conteo
@@ -89,7 +90,8 @@ def obtener_vendedor_productos_caros(data):
 #1
 def top_vendedores(data, N):
     dic = obtener_vendedores_productos(data)
-    return ordenar(dic)[:N]
+    ordenado = ordenar(dic)
+    return ordenado[:N]
 #2
 def top_marcas(data, N):
     dic = obtener_marcas_productos(data)
@@ -97,7 +99,8 @@ def top_marcas(data, N):
 #3
 def top_marcas_precio(data, N):
     dic = obtener_marcas_mayor_precio(data)
-    return ordenar(dic)[:N]
+    ordenado = ordenar(dic)
+    return ordenado[:N]
 #4
 def top_marcas_vendedor(data, N):
     dic = obtener_marcas_vendedores(data)
@@ -125,9 +128,26 @@ def reportar(data):
             
 #5 
 data = read_catalog()
-#reportar(data))
-#1
-#print(top_vendedores(data, 5))
+#reportar(data)
+#for key in dic :
+#    print('{} {}'.format(key, dic[key]))
+#1print(dic)
+# dic = obtener_vendedor_productos_caros(data)
+# for key in dic : 
+#     print('{} {}'.format(key, dic[key]))
+
+#top = top_vendedores(data, 10)
+# top = top_marcas_precio(data, 10)
+# print(top)
+# marcas = [] 
+# precios = []
+# for item in top :
+#     marcas.append(item[0])
+#     precios.append(item[1])
+#
+# plt.bar(marcas, precios)
+# plt.xticks(rotation = 45)
+# plt.show()
 #2
 #print(top_marcas(data, 5))
 #3
@@ -135,6 +155,8 @@ data = read_catalog()
 #4
 #print(top_marcas_vendedor(data, 5))
 #5
-print(top_vendedor_productos_precio(data, 5, 3))
+#top =  top_vendedor_productos_precio(data, 10, 2)
+#for key in top :
+#    print('{} -> {}'.format(key, top[key]))
         
     
